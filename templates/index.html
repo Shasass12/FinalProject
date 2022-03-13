@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 
 </head>
 <body>
@@ -56,7 +56,7 @@
             <h5>בכל בעיה או שאלה ניתן לפנות</h5>
         </div>
         <div style="padding: 65px;">
-            <button disabled class="btn" id="submitInstruction">המשך</button>
+            <button disabled class="btn" id="submitInstruction" href="/goSomeWhere">המשך</button>
         </div>
     </div>
 </div>

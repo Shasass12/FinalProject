@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h2{
+    margin-top: 0;
+    font-size: 46px;
+
+}
+
+h3{
+    font-size: 24px;
+    margin-bottom: 0;
+}
+p{
+    font-size: 18px;
+    margin-top: 0;
+}
+.main{
+    width: 70vw;
+    margin: auto;
+    padding: 20px;
+    background: lightyellow;
+}
+
+.bottomContainer{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.btn{
+    font-size: 29px;
+    background: white;
+    border-radius: 8px;
+    margin: 20px;
+}
+.question{
+    margin: 8px 5px 0;
+}
+
+.displayNone{
+    display: none;
+}
