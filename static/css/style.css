@@ -1,6 +1,10 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    width: 70vw;
+    margin: auto;
+    padding: 20px;
+    background: lightyellow;
 }
 
 h2{
