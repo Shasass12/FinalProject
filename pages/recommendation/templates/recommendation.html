@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+
+<h1 id="title">
+    {{ title }}
+</h1>
+{% if image=='איטלקי' %}
+    <img src="{{ url_for('recommendation.static', filename='img/Vivino.png') }}">
+{% endif %}
+{% if image=='אסייתי' %}
+    <img src="{{ url_for('recommendation.static', filename='img/Kampai.jpeg') }}">
+{% endif %}
+{% if image=='בשרים' %}
+    <img src="{{ url_for('recommendation.static', filename='img/BBB.png') }}">
+{% endif %}
+{% if image=='סלטים' %}
+    <img src="{{ url_for('recommendation.static', filename='img/Cafe_La_Lush.jpeg') }}">
+{% endif %}
+<br><br>
+<button>
+    <a href="{{ url_for('sheelon2.index') }}">המשך</a>
+</button>
+</html>

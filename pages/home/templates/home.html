@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+<div id="mainContainer" class="main">
+    <h2>נבדק יקר,</h2>
+    <p>
+        <span>בבקשה קרא את דף הסבר זה באשר לניסוי.</span><br>
+        <span>אנא וודא שהינך מבין היטב את שלבי המחקר.</span><br>
+        <span>לאחר קריאת דף זה אנא מלא את טופס ההסכמה להשתתף בניסוי</span>
+    </p>
+    <h3>מטרה:</h3>
+    <p>
+        <span>נבחרת להשתתף במחקר בנושא מערכות המלצה שיבדוק את התנהגות המשתמשים במערכות המלצה מבוססות בינה מלאכותית.</span><br>
+        <span>הניסוי מתבצע על ידי בר שליבקוביץ, יובל רון ושחר ששון בהנחייתם של פרופסור ליאור פינק והגברת נעמה אילני-צור מהמחלקה לתעשייה וניהול באוניברסיטת בן גוריון.</span><br>
+        <span>ההשתתפות במחקר הינה בהתנדבות.</span><br>
+    </p>
+    <h3>מהלך הניסוי:</h3>
+    <p>
+        <span>הניסוי יכלול 3 שלבים ומשכו יהיה כ 15 דקות.</span><br>
+        <span>בשלב הראשון - יוצג שאלון היכרות בו תידרש לענות על מספר שאלות בנוגע להעדפותייך.</span><br>
+        <span>בשלב השני- נציג בפנייך המלצה</span><br>
+        <span>בשלב האחרון- תתבקש לענות על מספר שאלות בהתייחס לשלב השני</span><br>
+    </p>
+    <h3>הסכמה:</h3>
+    <p>
+        <span>הניסוי אושר על ידי הוועדה האתית של אוניברסיטת בן גוריון.</span>
+    </p>
+    <h3>חשאיות:</h3>
+    <p>
+        <span>כל הפרטים שתמסור במהלך הניסוי יישמרו אצלנו במערכת ולא יימסרו לשום גורם אחר</span>
+    </p>
+    <h3>תגמול:</h3>
+    <p>
+        <span>השתתפות בניסוי באופן מלא תזכה אותך בנקודת בונוס בקורס X</span>
+    </p>
+
+    <h1>משתתף יקר ! אם מכל סיבה שהיא אינך מרגיש בנוח אנא הפסק את השתתפותך ופנה לעורכי הניסוי</h1>
+    <input type="checkbox" id="checkbox" name="vehicle1" value="Bike">
+    <label for="checkbox"> סימון תיבה זו מהווה הסכמה כי קראת את התנאים והבנת אותם.
+        בנוסף, סימון התיבה מהווה אישור להשתתפותך בניסוי
+    </label><br>
+    <div class="bottomContainer">
+        <div id="zurKesherContainer">
+            <h4>יצירת קשר:</h4>
+            <ul>
+                <li>shasass@post.bgu.ac.il</li>
+                <li>ronyuv@post.bgu.ac.il</li>
+                <li>0546666326</li>
+            </ul>
+            <h5>בכל בעיה או שאלה ניתן לפנות</h5>
+        </div>
+        <div style="padding: 65px;">
+            <button disabled class="btn" id="submitInstruction" onclick="window.location.href='{{ url_for('sheelon.index') }}';">
+                המשך
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('home.static', filename='js/home.js') }}"></script>
+
+</body>
+</html>
