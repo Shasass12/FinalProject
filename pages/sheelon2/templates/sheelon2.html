@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+
+{% if msg is defined %}
+<h2>{{msg}}</h2>
+{% else %}
+
+<h2>משתתף יקר,</h2>
+<p>
+    <span>אנא ענה על השאלות הבאות בהסתמך על ההמלצה שניתנה לך בעמוד הקודם</span><br>
+</p>
+
+<form method="POST" action="/sheelon2">
+    <p class="question">האם היית מקבל את המלצת המערכת?</p>
+    <input id="q1.1" type="radio" value="כן" name="quest1">
+    <label for="q1.1">כן</label>
+    <input id="q1.2" type="radio" value="לא" name="quest1" required>
+    <label for="q1.2">לא</label><br>
+
+    <p class="question">האם אתה חושב שיש אינטרס עסקי בהמלצה?</p>
+    <input id="q2.1" type="radio" value="כן" name="quest2">
+    <label for="q2.1">כן</label>
+    <input id="q2.2" type="radio" value="לא" name="quest2" required>
+    <label for="q2.2">לא</label><br>
+
+    <label for="quest3">עד כמה אתה חושב שהיית מקבל את ההמלצה הזו במערכת?</label>
+    <input type="range" id="quest3" name="quest3" min="1" max="100" oninput="this.nextElementSibling.value = this.value" required>
+    <output>50</output>
+    <br>
+
+    <label for="quest4">עד כמה אתה חושב שהאלגוריתם שיצר את ההמלצה מדויק?</label>
+    <input type="number" id="quest4" name="quest4" min="1" max="7" required>
+    <br><br>
+
+    <label for="quest5">עד כמה אתה חושב שההמלצה טובה?</label>
+    <input type="number" id="quest5" name="quest5" min="1" max="7" required><br><br>
+
+    <br>
+    <input type="submit" value="שלח">
+
+</form>
+{% endif %}
+</body>
+</html>

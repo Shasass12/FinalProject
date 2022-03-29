@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+<div id="mainContainer" class="main">
+    <h2>נבדק יקר,</h2>
+    <br>
+    {% if error_msg %}
+    <h2 style="color: red;">{{error_msg}}</h2>
+    {% endif %}
+    <br>
+    <form method="POST" action="/home_validate">
+        <label for="code">אנא הכנס קוד</label>
+        <input type="text" id="code" name="code" required><br><br>
+        <br>
+        <input type="submit" value="שלח">
+    </form>
+</div>
+</body>
+</html>

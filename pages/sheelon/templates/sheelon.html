@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+
+
+<h2>משתתף יקר,</h2>
+<p>
+    <span>כיום ישנם מספר מתחמי הסעדה באוניברסיטה הפתוחים לסטודנטים ולסגל.</span><br>
+    <span>כחלק משיפור שירותי ההסעדה אנו בוחנים בקרב קהל הסטודנטים של אוניברסיטת בן גוריון את האפשרות להקמת <strong>שירות משלוחים מרוכז ממסעדות בעיר באר שבע היישר לתוך האוניברסיטה.</strong></span><br>
+    <span>מטרת הפרויקט שלנו היא שמהמנות שתזמין יגיעו עד אלייך לכיתה על מנת להקל על ההזמנה.</span>
+    <span>לשם כך נשמח אם תענה על שאלון העדפות קצר על מנת לעזור לנו להמליץ לך על המסעדה המתאימה ביותר.</span>
+</p>
+
+<h1>שאלון היכרות</h1>
+<form method="POST" action="/sheelon" id="sheelon_form">
+    <p class="question">כמה פעמים אתה מגיע לאוניברסיטה במהלך השבוע?</p>
+    <input id="q1.1" type="radio" value="1" name="quest1">
+    <label for="q1.1">1</label><br>
+    <input id="q1.2" type="radio" value="2-3" name="quest1">
+    <label for="q1.2">2-3</label><br>
+    <input id="q1.3" type="radio" value="4 ומעלה" name="quest1">
+    <label for="q1.3">4 ומעלה</label>
+
+    <p class="question">מה הרגלי האכילה שלך במהלך היום באוניברסיטה?</p>
+    <input id="q2.1" type="radio" value="קפה" name="quest2">
+    <label for="q2.1">קפה</label><br>
+    <input id="q2.2" type="radio" value="סנדוויץ" name="quest2">
+    <label for="q2.2">סנדוויץ</label><br>
+    <input id="q2.3" type="radio" value="ארוחת צהריים כבדה" name="quest2">
+    <label for="q2.3">ארוחת צהריים כבדה</label><br>
+    <input id="q2.4" type="radio" value="פרי" name="quest2">
+    <label for="q2.4">פרי</label><br>
+
+    <p class="question">מתי אתה בדרך כלל אוכל באוניברסיטה? ניתן לסמן יותר מתשובה אחת</p>
+    <input id="q3.1" type="checkbox" value="8:00-10:00" name="quest3">
+    <label for="q3.1">8:00-10:00</label><br>
+    <input id="q3.2" type="checkbox" value="10:00-12:00" name="quest3">
+    <label for="q3.2">10:00-12:00</label><br>
+    <input id="q3.3" type="checkbox" value="12:00-14:00" name="quest3">
+    <label for="q3.3">12:00-14:00</label><br>
+    <input id="q3.4" type="checkbox" value="14:00-16:00" name="quest3">
+    <label for="q3.4">14:00-16:00</label><br>
+    <input id="q3.5" type="checkbox" value="16:00 ואילך" name="quest3">
+    <label for="q3.5">16:00 ואלך</label><br>
+
+    <p class="question">האם אתה אוכל כשר?</p>
+    <input id="q4.1" type="radio" value="כן" name="quest4">
+    <label for="q4.1">כן</label>
+    <input id="q4.2" type="radio" value="לא" name="quest4">
+    <label for="q4.2">לא</label><br>
+
+
+    <p class="question">איך אתה מגדיר עצמך מבחינת העדפות אוכל?</p>
+    <input id="q5.1" type="radio" value="אוכל כל" name="quest5">
+    <label for="q5.1">אוכל כל</label><br>
+    <input id="q5.2" type="radio" value="צמחוני" name="quest5">
+    <label for="q5.2">צמחוני</label><br>
+    <input id="q5.3" type="radio" value="טבעוני" name="quest5">
+    <label for="q5.3">טבעוני</label><br>
+    <input id="q5.4" type="radio" value="צליאקי" name="quest5">
+    <label for="q5.4">צליאקי</label><br>
+    <input id="q5.5" type="radio" value="קתוגי" name="quest5">
+    <label for="q5.5">קתוגי</label><br>
+    <input id="q5.6" type="radio" value="אחר" name="quest5">
+    <label for="q5.6">אחר</label><br>
+
+    <p class="question">באיזה אחד ממתחמי האוכל באוניברסיטה אתה מעדיף לצרוך אוכל או שתייה?</p>
+    <input id="q6.1" type="radio" value="קרנף" name="quest6">
+    <label for="q6.1">קרנף</label><br>
+    <input id="q6.2" type="radio" value="אלבי" name="quest6">
+    <label for="q6.2">אלבי</label><br>
+    <input id="q6.3" type="radio" value="ארומה" name="quest6">
+    <label for="q6.3">ארומה</label><br>
+    <input id="q6.4" type="radio" value="כפיות" name="quest6">
+    <label for="q6.4">כפיות</label><br>
+
+    <p class="question"> מה סגנון האוכל האהוב עלייך?</p>
+    <input id="q7.1" type="radio" value="איטלקי" name="quest7">
+    <label for="q7.1">איטלקי</label><br>
+    <input id="q7.2" type="radio" value="אסייתי" name="quest7">
+    <label for="q7.2">אסייתי</label><br>
+    <input id="q7.3" type="radio" value="בשרים" name="quest7">
+    <label for="q7.3">בשרים</label><br>
+    <input id="q7.4" type="radio" value="סלטים" name="quest7">
+    <label for="q7.4">סלטים</label><br>
+
+    <input type="text" placeholder="בוטנים, גלוטן וכו'" name="quest8" id="quest8">
+    <label for="quest8">האם אתה רגיש לסוג אוכל מסוים</label>
+    <br>
+    <br>
+    <input type="submit" value="שלח">
+
+</form>
+<script src="{{ url_for('sheelon.static', filename='js/sheelon.js') }}"></script>
+</body>
+</html>
