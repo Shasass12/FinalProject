@@ -8,10 +8,9 @@
 </head>
 <body>
 <div id="mainContainer" class="main">
-    <h2>נבדק יקר,</h2>
-    <br>
+
     {% if error_msg %}
-    <h2 style="color: red;">{{error_msg}}</h2>
+    <h4 style="color: red;">{{error_msg}}</h4>
     {% endif %}
     <br>
     <form method="POST" action="/home_validate">

@@ -29,13 +29,13 @@ def validate_key_and_start():
                 if is_mobile_device(user_agent):
                     # request from mobile, but key for desktop
                     if not key[1]:
-                        error_msg = 'הקוד מתאים למחשב, לא לפלאפון, נא להתחבר מהמחשב'
+                        error_msg = 'אנא היכנס מהמכשיר דרכו התבקשת להיכנס לניסוי'
                 # If desktop and request was from desktop
                 else:
                     # request from desktop
                     if key[1]:
                         # request from desktop but key for mobile
-                        error_msg = 'הקוד מתאים לפלאפון, לא למחשב, נא להתחבר מהפלאפון'
+                        error_msg = 'אנא היכנס מהמכשיר דרכו התבקשת להיכנס לניסוי'
     if not found_key:
         error_msg = 'הקוד לא נכון, אנא וודא שהכנסת נכון את הקוד'
     if error_msg:
