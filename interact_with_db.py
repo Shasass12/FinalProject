@@ -43,10 +43,12 @@ def enter_sheelon_row(
 
 def enter_sheelon2_row(
         accept_recommendation,
-        business_interest,
+        algorithm_subjective,
         recommendation_accept_number,
-        algorithm_precision_number,
-        recommendation_success_number,
+        algorithm_trust_result,
+        other_causes_for_result,
+        is_restaurant_known,
+        restaurant_score,
         key
 ):
     """ Connect to the PostgreSQL database server """
@@ -63,8 +65,8 @@ def enter_sheelon2_row(
         # create a cursor
         cur = conn.cursor()
         query = f"""
-        INSERT INTO sheelon2 (accept_recommendation,business_interest,recommendation_accept_number,algorithm_precision_number,recommendation_success_number, key)
-        VALUES ('{accept_recommendation}','{business_interest}','{recommendation_accept_number}','{algorithm_precision_number}','{recommendation_success_number}', '{key}');
+        INSERT INTO sheelon2 (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score, key)
+        VALUES ('{accept_recommendation}','{algorithm_subjective}','{recommendation_accept_number}','{algorithm_trust_result}','{other_causes_for_result}', '{is_restaurant_known}', '{restaurant_score}', '{key}');
         """
         cur.execute(query)
         conn.commit()
@@ -162,13 +164,16 @@ def create_sheelon2_table():
 
         # create a cursor
         cur = conn.cursor()
+        # (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score, key)
         query = """
         CREATE TABLE sheelon2 (
             accept_recommendation varchar(45),
-            business_interest varchar(45),
+            algorithm_subjective varchar(45),
             recommendation_accept_number varchar(45),
-            algorithm_precision_number varchar(45),
-            recommendation_success_number varchar(45),
+            algorithm_trust_result varchar(45),
+            other_causes_for_result varchar(45),
+            is_restaurant_known varchar(45),
+            restaurant_score varchar(45),
             key varchar(256)
         )
         """
@@ -406,7 +411,7 @@ def update_used_key(key):
 
 
 if __name__ == '__main__':
-    delete_sheelon_tables()
-    create_sheelon_table()
-    create_sheelon2_table()
-    add_key('aaabbb', False)
+    add_key('axb', False)
+    # delete_sheelon_tables()
+    # create_sheelon_table()
+    # create_sheelon2_table()

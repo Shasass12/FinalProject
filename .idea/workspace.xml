@@ -4,22 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ed460f2-d7b8-46e8-be9a-863935d347eb" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/flaskProject 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flaskProject 2.iml" afterDir="false" />
+    <list default="true" id="99caec13-4625-4751-9bee-e71febdfde20" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/FinalProject1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flaskProject 2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interact_with_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/interact_with_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/key_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/key_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/static/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/recommendation/recommendation.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/recommendation/recommendation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/recommendation/templates/recommendation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/recommendation/templates/recommendation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon/sheelon.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon/sheelon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon/static/js/sheelon.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon/static/js/sheelon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon/templates/sheelon.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon/templates/sheelon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon2/sheelon2.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon2/sheelon2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon2/templates/sheelon2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon2/templates/sheelon2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon3/sheelon3.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon3/sheelon3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sheelon3/templates/sheelon3.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sheelon3/templates/sheelon3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/start/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/start/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/start/static/js/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/start/static/js/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/start/templates/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/start/templates/start.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,39 +53,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26W363pxRv1874V2ydLXMLYpg7U" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="280nGTqlY4ASnltSJwAqu8RZhaz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages" />
-      <recent name="$PROJECT_DIR$/pages/sheelon2/static" />
-      <recent name="$PROJECT_DIR$/pages/sheelon2/templates" />
-      <recent name="$PROJECT_DIR$/pages/recommendation/templates" />
-      <recent name="$PROJECT_DIR$/pages/sheelon/static/css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages/sheelon/static" />
-      <recent name="$PROJECT_DIR$/pages/recommendation/static/img" />
-      <recent name="$PROJECT_DIR$/pages" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.interact_with_db">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="flaskProject 2" />
+      <module name="FinalProject1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -88,7 +88,7 @@
       <method v="2" />
     </configuration>
     <configuration name="interact_with_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="flaskProject 2" />
+      <module name="FinalProject1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -108,80 +108,22 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="key_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="flaskProject 2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/key_generator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
         <item itemvalue="Python.interact_with_db" />
-        <item itemvalue="Python.key_generator" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ed460f2-d7b8-46e8-be9a-863935d347eb" name="Changes" comment="" />
-      <created>1647525336330</created>
+      <changelist id="99caec13-4625-4751-9bee-e71febdfde20" name="Changes" comment="" />
+      <created>1650362277218</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1647525336330</updated>
+      <updated>1650362277218</updated>
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <created>1649613748523</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1649613748523</updated>
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <created>1649623925527</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1649623925527</updated>
-    </task>
-    <task id="LOCAL-00003" summary="commit">
-      <created>1649690022767</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1649690022767</updated>
-    </task>
-    <task id="LOCAL-00004" summary="commit">
-      <created>1649700457461</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1649700457461</updated>
-    </task>
-    <task id="LOCAL-00005" summary="commit">
-      <created>1649700551738</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1649700551738</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,30 +136,19 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/interact_with_db.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pages/sheelon2/sheelon2.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/pages/sheelon3/sheelon3.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pages/sheelon3/sheelon3.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="17" />
+          <line>21</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/style.css">
 
 </head>
+<script>
+    document.body.style.cursor = 'default';
+</script>
 <body>
 <div id="mainContainer" class="main">
 
@@ -13,11 +16,12 @@
     <h4 style="color: red;">{{error_msg}}</h4>
     {% endif %}
     <br>
-    <form method="POST" action="/home_validate">
+    <form id="form-home" method="POST" action="/home_validate">
         <label for="code">אנא הכנס קוד</label>
+        <br>
         <input type="text" id="code" name="code" required><br><br>
         <br>
-        <input type="submit" value="שלח">
+        <input type="submit" class="button-71" value="שלח" onclick="document.body.style.cursor = 'wait';">
     </form>
 </div>
 </body>

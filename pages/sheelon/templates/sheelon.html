@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 
 </head>
+<script>
+    document.body.style.cursor = 'default';
+</script>
 <body>
 
 
@@ -94,7 +97,7 @@
     <input type="text" placeholder="בוטנים, גלוטן וכו'" name="quest8" id="quest8">
     <br>
     <br>
-    <input type="submit" value="שלח">
+    <input type="submit" class="button-71" value="שלח" onclick="document.body.style.cursor = 'wait';">
 
 </form>
 <script src="{{ url_for('sheelon.static', filename='js/sheelon.js') }}"></script>

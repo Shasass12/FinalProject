@@ -6,6 +6,7 @@ form.addEventListener('submit', function(event) {
         counter = counter + 1
     }
     if (counter < 8) {
+        document.body.style.cursor = 'default';
         event.preventDefault();
         alert('נא למלא את כל השאלות')
     }

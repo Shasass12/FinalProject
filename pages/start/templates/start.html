@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/style.css">
 
 </head>
+<script>
+    document.body.style.cursor = 'default';
+</script>
 <body>
 <div id="mainContainer" class="main">
     <h2>טופס הסכמה מדעת להשתתפות בניסוי</h2>
@@ -51,7 +54,7 @@
             <span>experimentbgu@gmail.com</span>
         </div>
         <div style="padding: 65px;">
-            <button disabled class="btn" id="submitInstruction" onclick="window.location.href='{{ url_for('sheelon.index') }}';">
+            <button disabled class="button-71" id="submitInstruction" onclick="document.body.style.cursor = 'wait';window.location.href='{{ url_for('sheelon.index') }}';">
                 המשך
             </button>
         </div>

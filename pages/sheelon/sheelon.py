@@ -1,6 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
-from interact_with_db import enter_sheelon_row
-import random
 
 sheelon = Blueprint('sheelon', __name__, static_folder='static', static_url_path='/sheelon',
                     template_folder='templates')
