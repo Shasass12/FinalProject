@@ -4,9 +4,19 @@ body{
     width: 70vw;
     margin: auto;
     padding: 20px;
+    text-align: right;
+
+}
+
+.enterLabel{
+font-size:30px
+}
+.enterInput{
+    margin:20px;
 }
 
 .button-71 {
+  margin: 10px;
   background-color: #0078d0;
   border: 0;
   border-radius: 56px;
@@ -130,10 +140,11 @@ p{
 
 .bottomContainer{
     width: 100%;
-    display: flex;
+    /*display: flex;
     align-content: center;
-    justify-content: space-between;
+    justify-content: space-between;*/
 }
+
 #form-home {
   text-align center;
 }

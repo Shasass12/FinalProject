@@ -1,5 +1,5 @@
-import psycopg2
 
+import psycopg2
 
 def enter_sheelon_row(
         arrive_to_uni_times,

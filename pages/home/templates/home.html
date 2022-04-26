@@ -11,18 +11,20 @@
 </script>
 <body>
 <div id="mainContainer" class="main">
-
+    <div style="text-align:center;">
     {% if error_msg %}
     <h4 style="color: red;">{{error_msg}}</h4>
     {% endif %}
     <br>
     <form id="form-home" method="POST" action="/home_validate">
-        <label for="code">אנא הכנס קוד:</label>
+        <label class="enterLabel" for="code">אנא הכנס קוד:</label>
         <br>
-        <input type="text" id="code" name="code" required><br><br>
+        <input class="enterInput" type="text" id="code" name="code" required><br><br>
         <br>
-        <input type="submit" class="button-71" value="שלח" onclick="document.body.style.cursor = 'wait';">
+         <input type="submit" class="button-71" value="שלח" onclick="document.body.style.cursor = 'wait';">
+
     </form>
+        </div>
 </div>
 </body>
 </html>

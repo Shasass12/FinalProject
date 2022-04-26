@@ -23,6 +23,7 @@
         <label for="q1.1">כן</label>
         <input id="q1.2" type="radio" value="לא" name="quest1" required>
         <label for="q1.2">לא</label><br>
+        <div style="text-align:center">
         <button type="button" class="button-71"
                 onclick="
     let form = document.getElementById('sheelon-part-1')
@@ -38,6 +39,7 @@
 ">
             המשך
         </button>
+            </div>
     </div>
 
     <div id="part2">
@@ -69,7 +71,8 @@
         <output>50</output>
         <br>
 
-        <button type="button" class="button-71"
+        <div style="text-align:center;margin:20px;">
+            <button type="button" class="button-71"
                 onclick="
         part1.style.display = 'block';
         part2.style.display = 'none';
@@ -108,6 +111,8 @@
 ">
             המשך
         </button>
+        </div>
+
     </div>
 
     <div id="part3">
@@ -116,17 +121,15 @@
         <label for="q6.1">כן</label>
         <input id="q6.2" type="radio" value="לא" name="quest6">
         <label for="q6.2">לא</label><br>
-
-
-
-        <button class="button-71" type="button"
+        <div style="text-align:center;margin:20px;">
+            <button class="button-71" type="button"
                 onclick="
         part2.style.display = 'block';
         part3.style.display = 'none';
 ">
             חזור
         </button>
-        <button type="button" class="button-71"
+            <button type="button" class="button-71"
                 onclick="
     let form = document.getElementById('sheelon-part-1')
     const formData = new FormData(form)
@@ -148,6 +151,7 @@
 ">
             המשך
         </button>
+        </div>
     </div>
 
     <div id="part4">
@@ -157,26 +161,30 @@
                required>
         <output>50</output>
         <br>
-        <button type="button" class="button-71"
+        <div style="text-align:center;margin:20px;">
+            <button type="button" class="button-71"
                 onclick="
         part3.style.display = 'block';
         part4.style.display = 'none';
 ">
             חזור
         </button>
-        <button type="button" class="button-71"
+            <button type="button" class="button-71"
                 onclick="
         part4.style.display = 'none';
         part5.style.display = 'block';
 ">
             המשך
         </button>
+        </div>
     </div>
 
     <br>
-    <div id="part5">
+    <div style="text-align:center" id="part5">
+        <p>תשובתך נקלטה, להמשך לחץ "שלח"</p>
         <input type="submit" value="שלח" class="button-71" onclick="document.body.style.cursor = 'wait';">
     </div>
+
 </form>
 {% endif %}
 </body>
