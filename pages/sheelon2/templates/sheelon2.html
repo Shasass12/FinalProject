@@ -14,7 +14,7 @@
 <script>
     document.body.style.cursor = 'default';
 </script>
-<h4>אנא ענה על השאלות הבאות בהסתמך על ההמלצה שניתנה לך בעמוד הקודם</h4><br>
+<h4>אנא ענה על השאלות הבאות בהסתמך על ההמלצה שניתנה לך </h4><br>
 
 <form method="POST" id="sheelon-part-1" action="/sheelon2">
     <div id="part1">
@@ -31,7 +31,7 @@
     for (var pair of formData.entries()) {
         if (pair[0] == 'quest1') {
             part1.style.display = 'none';
-            part2.style.display = 'block';
+            part8.style.display = 'block';
             return;
         }
     }
@@ -42,43 +42,74 @@
             </div>
     </div>
 
+    <div id="part8">
+        <p class="question">האם היית משתמש במערכת מסוג זה?</p>
+        <br>
+        <input type="range" id="quest8" name="quest8" min="1" max="100"
+               oninput="this.nextElementSibling.value = this.value;"
+               required>
+         <output>50</output>
+        <br>
+        <br>
+         <div style="text-align:center;margin:20px;">
+
+        <button type="button" class="button-71"
+                onclick="
+    let form = document.getElementById('sheelon-part-1')
+    const formData = new FormData(form)
+
+
+            part8.style.display = 'none';
+            part2.style.display = 'block';
+
+">
+            המשך
+        </button>
+        </div>
+    </div>
+
     <div id="part2">
+
+        <h4> דרג את ההיגדים הבאים כאשר 1 מייצג "לא מסכים כלל" ו-100 מייצג "מסכים מאוד"</h4>
+        <br>
         <label for="quest2">האלגוריתם שמחשב את ההמלצה הוא אובייקטיבי</label>
+        <br>
         <input type="range" id="quest2" name="quest2" min="1" max="100"
                oninput="this.nextElementSibling.value = this.value;"
                required>
         <output>50</output>
         <br>
+        <br>
 
-        <label for="quest3">המערכת סיפקה את ההמלצה הטובה עבורי</label>
+        <label for="quest3">המערכת סיפקה המלצה טובה עבורי</label>
+        <br>
         <input type="range" id="quest3" name="quest3" min="1" max="100"
                oninput="this.nextElementSibling.value = this.value"
                required>
         <output>50</output>
         <br>
+        <br>
 
         <label for="quest4">המערכת מספקת המלצות על סמך איכות האלגוריתם שלה</label>
+        <br>
         <input type="range" id="quest4" name="quest4" min="1" max="100"
                oninput="this.nextElementSibling.value = this.value"
                required>
         <output>50</output>
         <br>
+        <br>
 
         <label for="quest5">המערכת מספקת המלצות על סמך שיקולים עסקיים של המפעילים שלה</label>
+        <br>
         <input type="range" id="quest5" name="quest5" min="1" max="100"
                oninput="this.nextElementSibling.value = this.value"
                required>
         <output>50</output>
         <br>
+        <br>
 
         <div style="text-align:center;margin:20px;">
-            <button type="button" class="button-71"
-                onclick="
-        part1.style.display = 'block';
-        part2.style.display = 'none';
-">
-            חזור
-        </button>
+
         <button type="button" class="button-71"
                 onclick="
     let form = document.getElementById('sheelon-part-1')
@@ -117,28 +148,54 @@
 
     <div id="part3">
         <p class="question">האם אתה מכיר את המסעדה שהומלצה לך?</p>
-        <input id="q6.1" type="radio" value="כן" name="quest6">
-        <label for="q6.1">כן</label>
-        <input id="q6.2" type="radio" value="לא" name="quest6">
-        <label for="q6.2">לא</label><br>
-        <div style="text-align:center;margin:20px;">
-            <button class="button-71" type="button"
-                onclick="
-        part2.style.display = 'block';
-        part3.style.display = 'none';
+        <input id="q6.1" type="radio" value="כן" name="quest6" onchange="
+        let form = document.getElementById('sheelon-part-1')
+    const formData = new FormData(form)
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ':' + pair[1]);
+        if (pair[0] == 'quest6') {
+            if (pair[1] == 'כן') {
+
+                rest_range.style.display = 'block';
+            }
+        }
+    }
 ">
-            חזור
-        </button>
+        <label for="q6.1">כן</label>
+        <input id="q6.2" type="radio" value="לא" name="quest6"  onchange="
+        let form = document.getElementById('sheelon-part-1')
+    const formData = new FormData(form)
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ':' + pair[1]);
+        if (pair[0] == 'quest6') {
+            if (pair[1] == 'לא') {
+                rest_range.style.display = 'none';
+            }
+        }
+    }
+">
+        <label for="q6.2">לא</label><br><br>
+        <div id="rest_range">
+            <label for="quest7">דרג את המסעדה שהומלצה עבורך</label>
+            <input type="range" id="quest7" name="quest7" min="1" max="100"
+                   oninput="this.nextElementSibling.value = this.value"
+                   required>
+            <output>50</output>
+        <br>
+        </div>
+        <div style="text-align:center;margin:20px;">
+
             <button type="button" class="button-71"
                 onclick="
     let form = document.getElementById('sheelon-part-1')
     const formData = new FormData(form)
     for (var pair of formData.entries()) {
         console.log(pair[0] + ':' + pair[1]);
+        console.log('jbhdjhd', pair[0])
         if (pair[0] == 'quest6') {
             if (pair[1] == 'כן') {
                 part3.style.display = 'none';
-                part4.style.display = 'block';
+                part5.style.display = 'block';
             }
             else {
                 part3.style.display = 'none';
@@ -154,30 +211,6 @@
         </div>
     </div>
 
-    <div id="part4">
-        <label for="quest7">דרג את המסעדה שהומלצה עבורך</label>
-        <input type="range" id="quest7" name="quest7" min="1" max="100"
-               oninput="this.nextElementSibling.value = this.value"
-               required>
-        <output>50</output>
-        <br>
-        <div style="text-align:center;margin:20px;">
-            <button type="button" class="button-71"
-                onclick="
-        part3.style.display = 'block';
-        part4.style.display = 'none';
-">
-            חזור
-        </button>
-            <button type="button" class="button-71"
-                onclick="
-        part4.style.display = 'none';
-        part5.style.display = 'block';
-">
-            המשך
-        </button>
-        </div>
-    </div>
 
     <br>
     <div style="text-align:center" id="part5">

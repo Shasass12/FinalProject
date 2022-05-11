@@ -1,8 +1,12 @@
+import time
+
 from flask import Blueprint, render_template, request, redirect, url_for, session
+from threading import Timer
 
 sheelon = Blueprint('sheelon', __name__, static_folder='static', static_url_path='/sheelon',
                     template_folder='templates')
 
+a = 0
 
 @sheelon.route('/sheelon')
 def index():
@@ -23,4 +27,16 @@ def send_sheelon_to_db():
             'quest7': args.get('quest7'),
             'quest8': args.get('quest8'),
         }
+    global a
+    t = Timer(5.0, waitfunc)
+    t.start()
+
+    while(a!=1):
+        time.sleep(1)
+    a = 0
     return redirect(url_for('recommendation.index', favourite_food_style=args['quest7']))
+
+
+def waitfunc():
+    global a
+    a = 1

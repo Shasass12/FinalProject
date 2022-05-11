@@ -49,6 +49,7 @@ def enter_sheelon2_row(
         other_causes_for_result,
         is_restaurant_known,
         restaurant_score,
+        system_use,
         key
 ):
     """ Connect to the PostgreSQL database server """
@@ -65,8 +66,8 @@ def enter_sheelon2_row(
         # create a cursor
         cur = conn.cursor()
         query = f"""
-        INSERT INTO sheelon2 (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score, key)
-        VALUES ('{accept_recommendation}','{algorithm_subjective}','{recommendation_accept_number}','{algorithm_trust_result}','{other_causes_for_result}', '{is_restaurant_known}', '{restaurant_score}', '{key}');
+        INSERT INTO sheelon2 (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score,system_use, key)
+        VALUES ('{accept_recommendation}','{algorithm_subjective}','{recommendation_accept_number}','{algorithm_trust_result}','{other_causes_for_result}', '{is_restaurant_known}', '{restaurant_score}','{system_use}', '{key}');
         """
         cur.execute(query)
         conn.commit()
@@ -80,7 +81,7 @@ def enter_sheelon2_row(
             print('Database connection closed.')
 
 
-def enter_sheelon3_row(device, age, gender, studies, hours_computer, hours_mobile, open_space, public_space,
+def enter_sheelon3_row(device, age, gender, hours_computer, hours_mobile, open_space, public_space,
                        large_space, noise, darkness, crowd, key):
     """ Connect to the PostgreSQL database server """
     conn = None
@@ -96,8 +97,8 @@ def enter_sheelon3_row(device, age, gender, studies, hours_computer, hours_mobil
         # create a cursor
         cur = conn.cursor()
         query = f"""
-        INSERT INTO sheelon3 (device,age,gender,studies,hours_computer, hours_mobile, open_space, public_space, large_space, noise, darkness, crowd, key)
-        VALUES ('{device}','{age}','{gender}','{studies}','{hours_computer}', '{hours_mobile}', '{open_space}', '{public_space}', '{large_space}', '{noise}', '{darkness}', '{crowd}', '{key}');
+        INSERT INTO sheelon3 (device,age,gender,hours_computer, hours_mobile, open_space, public_space, large_space, noise, darkness, crowd, key)
+        VALUES ('{device}','{age}','{gender}','{hours_computer}', '{hours_mobile}', '{open_space}', '{public_space}', '{large_space}', '{noise}', '{darkness}', '{crowd}', '{key}');
         """
         cur.execute(query)
         conn.commit()
@@ -208,7 +209,6 @@ def create_sheelon3_table():
             device varchar(45),
             age varchar(45),
             gender varchar(45),
-            studies varchar(45),
             hours_computer varchar(45),
             hours_mobile varchar(45),
             open_space varchar(45),
@@ -333,12 +333,14 @@ def get_keys():
         """
         cur.execute(query)
         keys = cur.fetchall()
+        print(f'keys = {keys}')
 
         cur.close()
         conn.close()
 
         return keys
     except (Exception, psycopg2.DatabaseError) as error:
+        print('exception')
         print(error)
     finally:
         if conn is not None:

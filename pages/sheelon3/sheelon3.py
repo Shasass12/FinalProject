@@ -38,13 +38,13 @@ def send_sheelon_to_db():
             sheelon2['quest5'],
             sheelon2['quest6'],
             sheelon2['quest7'],
+            sheelon2['quest8'],
             session['key']
         )
         enter_sheelon3_row(
             args.get('quest1'),
             args.get('quest2'),
             args.get('quest3'),
-            args.get('quest4'),
             args.get('quest5'),
             args.get('quest6'),
             args.get('quest7'),
