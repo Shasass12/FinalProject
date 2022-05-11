@@ -29,8 +29,9 @@ def enter_sheelon_row(
         INSERT INTO sheelon (arrive_to_uni_times,eating_habits,preferred_dish,eat_kosher,food_preferences,preferred_uni_food_shop,food_styles,allergies, key)
         VALUES ('{arrive_to_uni_times}','{eating_habits}','{preferred_dish}','{eat_kosher}','{food_preferences}','{preferred_uni_food_shop}','{food_styles}','{allergies}', '{key}');
         """
-        cur.execute(query)
-        conn.commit()
+        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+            cur.execute(query)
+            conn.commit()
         cur.close()
         conn.close()
     except (Exception, psycopg2.DatabaseError) as error:
@@ -69,8 +70,9 @@ def enter_sheelon2_row(
         INSERT INTO sheelon2 (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score,system_use, key)
         VALUES ('{accept_recommendation}','{algorithm_subjective}','{recommendation_accept_number}','{algorithm_trust_result}','{other_causes_for_result}', '{is_restaurant_known}', '{restaurant_score}','{system_use}', '{key}');
         """
-        cur.execute(query)
-        conn.commit()
+        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+            cur.execute(query)
+            conn.commit()
         cur.close()
         conn.close()
     except (Exception, psycopg2.DatabaseError) as error:
@@ -100,8 +102,9 @@ def enter_sheelon3_row(device, age, gender, hours_computer, hours_mobile, open_s
         INSERT INTO sheelon3 (device,age,gender,hours_computer, hours_mobile, open_space, public_space, large_space, noise, darkness, crowd, key)
         VALUES ('{device}','{age}','{gender}','{hours_computer}', '{hours_mobile}', '{open_space}', '{public_space}', '{large_space}', '{noise}', '{darkness}', '{crowd}', '{key}');
         """
-        cur.execute(query)
-        conn.commit()
+        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+            cur.execute(query)
+            conn.commit()
         cur.close()
         conn.close()
     except (Exception, psycopg2.DatabaseError) as error:

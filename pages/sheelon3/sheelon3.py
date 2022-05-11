@@ -16,45 +16,45 @@ def index():
 @sheelon3.route('/sheelon3', methods=['POST'])
 def send_sheelon_to_db():
     args = request.form
-    if session and session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
-        sheelon = session['sheelon']
-        sheelon2 = session['sheelon2']
-        enter_sheelon_row(
-            sheelon['quest1'],
-            sheelon['quest2'],
-            sheelon['quest3'],
-            sheelon['quest4'],
-            sheelon['quest5'],
-            sheelon['quest6'],
-            sheelon['quest7'],
-            sheelon['quest8'],
-            session['key']
-        )
-        enter_sheelon2_row(
-            sheelon2['quest1'],
-            sheelon2['quest2'],
-            sheelon2['quest3'],
-            sheelon2['quest4'],
-            sheelon2['quest5'],
-            sheelon2['quest6'],
-            sheelon2['quest7'],
-            sheelon2['quest8'],
-            session['key']
-        )
-        enter_sheelon3_row(
-            args.get('quest1'),
-            args.get('quest2'),
-            args.get('quest3'),
-            args.get('quest5'),
-            args.get('quest6'),
-            args.get('quest7'),
-            args.get('quest8'),
-            args.get('quest9'),
-            args.get('quest10'),
-            args.get('quest11'),
-            args.get('quest12'),
-            session['key']
-        )
+    # if session and session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
+    sheelon = session['sheelon']
+    sheelon2 = session['sheelon2']
+    enter_sheelon_row(
+        sheelon['quest1'],
+        sheelon['quest2'],
+        sheelon['quest3'],
+        sheelon['quest4'],
+        sheelon['quest5'],
+        sheelon['quest6'],
+        sheelon['quest7'],
+        sheelon['quest8'],
+        session['key']
+    )
+    enter_sheelon2_row(
+        sheelon2['quest1'],
+        sheelon2['quest2'],
+        sheelon2['quest3'],
+        sheelon2['quest4'],
+        sheelon2['quest5'],
+        sheelon2['quest6'],
+        sheelon2['quest7'],
+        sheelon2['quest8'],
+        session['key']
+    )
+    enter_sheelon3_row(
+        args.get('quest1'),
+        args.get('quest2'),
+        args.get('quest3'),
+        args.get('quest5'),
+        args.get('quest6'),
+        args.get('quest7'),
+        args.get('quest8'),
+        args.get('quest9'),
+        args.get('quest10'),
+        args.get('quest11'),
+        args.get('quest12'),
+        session['key']
+    )
     update_used_key(session['key'])
     session.clear()
 
