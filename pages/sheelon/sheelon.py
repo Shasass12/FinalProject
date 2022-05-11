@@ -16,7 +16,8 @@ def index():
 @sheelon.route('/sheelon', methods=['POST'])
 def send_sheelon_to_db():
     args = request.form
-    if session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
+    print(session['key'])
+    if session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
         session['sheelon'] = {
             'quest1': args.get('quest1'),
             'quest2': args.get('quest2'),
