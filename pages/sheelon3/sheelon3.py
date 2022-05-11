@@ -17,8 +17,11 @@ def index():
 def send_sheelon_to_db():
     args = request.form
     # if session and session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
-    sheelon = session['sheelon']
-    sheelon2 = session['sheelon2']
+    # sheelon = session['sheelon']
+    # sheelon2 = session['sheelon2']
+    sheelon = session.pop('sheelon', None)
+    sheelon2 = session.pop('sheelon2', None)
+    key = session.pop('key', None)
     enter_sheelon_row(
         sheelon['quest1'],
         sheelon['quest2'],
@@ -28,7 +31,7 @@ def send_sheelon_to_db():
         sheelon['quest6'],
         sheelon['quest7'],
         sheelon['quest8'],
-        session['key']
+        key
     )
     enter_sheelon2_row(
         sheelon2['quest1'],
@@ -39,7 +42,7 @@ def send_sheelon_to_db():
         sheelon2['quest6'],
         sheelon2['quest7'],
         sheelon2['quest8'],
-        session['key']
+        key
     )
     enter_sheelon3_row(
         args.get('quest1'),
@@ -53,9 +56,9 @@ def send_sheelon_to_db():
         args.get('quest10'),
         args.get('quest11'),
         args.get('quest12'),
-        session['key']
+        key
     )
-    update_used_key(session['key'])
+    update_used_key(key)
     session.clear()
 
     return redirect(url_for('sheelon3.index', msg='תודה רבה על ההשתתפות בניסוי'))
