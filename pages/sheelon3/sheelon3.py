@@ -13,7 +13,7 @@ def index():
     return render_template('sheelon3.html')
 
 
-@sheelon3.route('/sheelon3', methods=['POST'])
+@sheelon3.route('/sheelon3', methods=['POST', 'GET'])
 def send_sheelon_to_db():
     args = request.form
     # if session and session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
