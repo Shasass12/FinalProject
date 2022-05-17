@@ -19,9 +19,9 @@ def send_sheelon_to_db():
     # if session and session['key'] and session['key'] != 'TEST-DESKTOP' and session['key'] != 'TEST-MOBILE':
     # sheelon = session['sheelon']
     # sheelon2 = session['sheelon2']
-    sheelon = session.pop('sheelon')
-    sheelon2 = session.pop('sheelon2')
-    key = session.pop('key')
+    sheelon = session.pop('sheelon', None)
+    sheelon2 = session.pop('sheelon2', None)
+    key = session.pop('key', None)
     enter_sheelon_row(
         sheelon['quest1'],
         sheelon['quest2'],
