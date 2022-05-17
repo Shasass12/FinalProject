@@ -61,4 +61,4 @@ def send_sheelon_to_db():
     update_used_key(key)
     session.clear()
 
-    return redirect(url_for('sheelon3.index', msg='תודה רבה על ההשתתפות בניסוי'))
+    return redirect(url_for('thankyou.index', msg='תודה רבה על ההשתתפות בניסוי'))
