@@ -185,4 +185,12 @@ p{
   100% { transform: rotate(360deg); }
 }
 
+#thanks-text {
+ text-align center;
+}
+
+.thanks{
+    text-align:center;
+}
+
 
