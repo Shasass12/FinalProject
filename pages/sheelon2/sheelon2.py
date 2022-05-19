@@ -9,21 +9,23 @@ sheelon2 = Blueprint('sheelon2', __name__, static_folder='static', static_url_pa
 @sheelon2.route('/sheelon2')
 def index():
     if request.args.get('msg'):
-        return render_template('sheelon2.html', msg=request.args['msg'])
-    return render_template('sheelon2.html')
+        return render_template('sheelon2.html', msg=request.args['msg'], key=request.args['key'])
+    return render_template('sheelon2.html', key=request.args['key'])
 
 
 @sheelon2.route('/sheelon2', methods=['POST'])
 def send_sheelon_to_db():
     args = request.form
-    session['sheelon2'] = {
-        'quest1': args.get('quest1'),
-        'quest2': args.get('quest2'),
-        'quest3': args.get('quest3'),
-        'quest4': args.get('quest4'),
-        'quest5': args.get('quest5'),
-        'quest6': args.get('quest6'),
-        'quest7': args.get('quest7'),
-        'quest8': args.get('quest8')
-    }
-    return redirect(url_for('sheelon3.index'))
+    enter_sheelon2_row(
+        args.get('quest1'),
+        args.get('quest2'),
+        args.get('quest3'),
+        args.get('quest4'),
+        args.get('quest5'),
+        args.get('quest6'),
+        args.get('quest7'),
+        args.get('quest8'),
+        request.args['key'],
+    tmp=True
+)
+    return redirect(url_for('sheelon3.index', key=request.args['key']))

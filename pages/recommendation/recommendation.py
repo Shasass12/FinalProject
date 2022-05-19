@@ -11,4 +11,4 @@ restaurant_title = ['לפי התאמה אישית, המלצת המערכת הי�
 @recommendation.route('/recommendation')
 def index():
     title = random.choice(restaurant_title)
-    return render_template('recommendation.html', title=title, image=request.args['favourite_food_style'])
+    return render_template('recommendation.html', title=title, image=request.args['favourite_food_style'], key=request.args['key'])

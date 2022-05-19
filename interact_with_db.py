@@ -10,7 +10,8 @@ def enter_sheelon_row(
         preferred_uni_food_shop,
         food_styles,
         allergies,
-        key
+        key,
+        tmp=False
 ):
     """ Connect to the PostgreSQL database server """
     conn = None
@@ -25,11 +26,17 @@ def enter_sheelon_row(
 
         # create a cursor
         cur = conn.cursor()
+        sheelon = 'sheelon' if not tmp else 'sheelon_tmp'
+        delete_query = f"""DELETE FROM {sheelon} WHERE key='{key}'"""
+        cur.execute(delete_query)
+        conn.commit()
         query = f"""
-        INSERT INTO sheelon (arrive_to_uni_times,eating_habits,preferred_dish,eat_kosher,food_preferences,preferred_uni_food_shop,food_styles,allergies, key)
+        INSERT INTO {sheelon} (arrive_to_uni_times,eating_habits,preferred_dish,eat_kosher,food_preferences,preferred_uni_food_shop,food_styles,allergies, key)
         VALUES ('{arrive_to_uni_times}','{eating_habits}','{preferred_dish}','{eat_kosher}','{food_preferences}','{preferred_uni_food_shop}','{food_styles}','{allergies}', '{key}');
+
         """
-        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+        if tmp or (key != 'TEST-DESKTOP' and key != 'TEST-MOBILE'):
+            print('y')
             cur.execute(query)
             conn.commit()
         cur.close()
@@ -51,7 +58,8 @@ def enter_sheelon2_row(
         is_restaurant_known,
         restaurant_score,
         system_use,
-        key
+        key,
+        tmp=False
 ):
     """ Connect to the PostgreSQL database server """
     conn = None
@@ -66,11 +74,18 @@ def enter_sheelon2_row(
 
         # create a cursor
         cur = conn.cursor()
+        sheelon2 = 'sheelon2' if not tmp else 'sheelon2_tmp'
+        delete_query = f"""DELETE FROM {sheelon2} WHERE key='{key}'"""
+        cur.execute(delete_query)
+        conn.commit()
         query = f"""
-        INSERT INTO sheelon2 (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score,system_use, key)
+        INSERT INTO {sheelon2} (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score,system_use, key)
         VALUES ('{accept_recommendation}','{algorithm_subjective}','{recommendation_accept_number}','{algorithm_trust_result}','{other_causes_for_result}', '{is_restaurant_known}', '{restaurant_score}','{system_use}', '{key}');
+
         """
-        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+
+        if tmp or (key != 'TEST-DESKTOP' and key != 'TEST-MOBILE'):
+            print('x')
             cur.execute(query)
             conn.commit()
         cur.close()
@@ -84,7 +99,7 @@ def enter_sheelon2_row(
 
 
 def enter_sheelon3_row(device, age, gender, hours_computer, hours_mobile, open_space, public_space,
-                       large_space, noise, darkness, crowd, key):
+                       large_space, noise, darkness, crowd, key, tmp=False):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -98,11 +113,16 @@ def enter_sheelon3_row(device, age, gender, hours_computer, hours_mobile, open_s
 
         # create a cursor
         cur = conn.cursor()
+        sheelon3 = 'sheelon3' if not tmp else 'sheelon3_tmp'
+        delete_query = f"""DELETE FROM {sheelon3} WHERE key='{key}'"""
+        cur.execute(delete_query)
+        conn.commit()
         query = f"""
-        INSERT INTO sheelon3 (device,age,gender,hours_computer, hours_mobile, open_space, public_space, large_space, noise, darkness, crowd, key)
+        INSERT INTO {sheelon3} (device,age,gender,hours_computer, hours_mobile, open_space, public_space, large_space, noise, darkness, crowd, key)
         VALUES ('{device}','{age}','{gender}','{hours_computer}', '{hours_mobile}', '{open_space}', '{public_space}', '{large_space}', '{noise}', '{darkness}', '{crowd}', '{key}');
+
         """
-        if key != 'TEST-DESKTOP' and key != 'TEST-MOBILE':
+        if tmp or (key != 'TEST-DESKTOP' and key != 'TEST-MOBILE'):
             cur.execute(query)
             conn.commit()
         cur.close()
@@ -115,7 +135,7 @@ def enter_sheelon3_row(device, age, gender, hours_computer, hours_mobile, open_s
             print('Database connection closed.')
 
 
-def create_sheelon_table():
+def create_sheelon_table(tmp=False):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -129,8 +149,9 @@ def create_sheelon_table():
 
         # create a cursor
         cur = conn.cursor()
-        query = """
-        CREATE TABLE sheelon (
+        sheelon = 'sheelon' if not tmp else 'sheelon_tmp'
+        query = f"""
+        CREATE TABLE {sheelon} (
             arrive_to_uni_times varchar(45),
             eating_habits varchar(45),
             preferred_dish varchar(45),
@@ -154,7 +175,7 @@ def create_sheelon_table():
             print('Database connection closed.')
 
 
-def create_sheelon2_table():
+def create_sheelon2_table(tmp=False):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -168,9 +189,10 @@ def create_sheelon2_table():
 
         # create a cursor
         cur = conn.cursor()
+        sheelon2 = 'sheelon2' if not tmp else 'sheelon2_tmp'
         # (accept_recommendation,algorithm_subjective,recommendation_accept_number,algorithm_trust_result,other_causes_for_result,is_restaurant_known,restaurant_score, key)
-        query = """
-        CREATE TABLE sheelon2 (
+        query = f"""
+        CREATE TABLE {sheelon2} (
             accept_recommendation varchar(45),
             algorithm_subjective varchar(45),
             recommendation_accept_number varchar(45),
@@ -178,6 +200,7 @@ def create_sheelon2_table():
             other_causes_for_result varchar(45),
             is_restaurant_known varchar(45),
             restaurant_score varchar(45),
+            system_use varchar(256),
             key varchar(256)
         )
         """
@@ -193,7 +216,7 @@ def create_sheelon2_table():
             print('Database connection closed.')
 
 
-def create_sheelon3_table():
+def create_sheelon3_table(tmp=False):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -207,8 +230,9 @@ def create_sheelon3_table():
 
         # create a cursor
         cur = conn.cursor()
-        query = """
-        CREATE TABLE sheelon3 (
+        sheelon3 = 'sheelon3' if not tmp else 'sheelon3_tmp'
+        query = f"""
+        CREATE TABLE {sheelon3} (
             device varchar(45),
             age varchar(45),
             gender varchar(45),
@@ -233,6 +257,7 @@ def create_sheelon3_table():
         if conn is not None:
             conn.close()
             print('Database connection closed.')
+
 
 
 def create_keys_table(keys):
@@ -316,7 +341,6 @@ def add_key(key, is_mobile):
             conn.close()
             print('Database connection closed.')
 
-
 def get_keys():
     """ Connect to the PostgreSQL database server """
     conn = None
@@ -350,6 +374,38 @@ def get_keys():
             conn.close()
             print('Database connection closed.')
 
+def get_sheelon(sheelon, key):
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+
+        # connect to the PostgreSQL server
+        conn = psycopg2.connect(host='ec2-34-231-183-74.compute-1.amazonaws.com',
+                                user='idayggcayroafv',
+                                port=5432,
+                                password='29d8e5aa0519b354029cdf2848fdcaec98690fdefcbff037bc39fde1b1547ce3',
+                                database='dar7m8bk3j59f6')
+
+        # create a cursor
+        cur = conn.cursor()
+        query = f"""
+        SELECT * FROM {sheelon} where key='{key}';
+        """
+        cur.execute(query)
+        keys = cur.fetchall()
+
+        cur.close()
+        conn.close()
+
+        return keys
+    except (Exception, psycopg2.DatabaseError) as error:
+        print('exception')
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
+
 
 def delete_sheelon_tables():
     conn = None
@@ -365,14 +421,14 @@ def delete_sheelon_tables():
         # create a cursor
         cur = conn.cursor()
 
-        query = """
-        DROP TABLE sheelon
-        """
-        cur.execute(query)
-        conn.commit()
+        #query = """
+        #DROP TABLE sheelon
+        #"""
+        #cur.execute(query)
+        #conn.commit()
 
         query = """
-        DROP TABLE sheelon2
+        DROP TABLE sheelon2_tmp
         """
         cur.execute(query)
         conn.commit()
@@ -416,7 +472,13 @@ def update_used_key(key):
 
 
 if __name__ == '__main__':
-    add_key('axb', False)
+    delete_sheelon_tables()
+
+    #print(get_sheelon('sheelon_tmp', 'TEST-DESKTOP'))
+    #add_key('axb', False)
+    #create_sheelon_table(True)
+    create_sheelon2_table(True)
+    #create_sheelon3_table(True)
     # delete_sheelon_tables()
     # create_sheelon_table()
     # create_sheelon2_table()

@@ -40,7 +40,7 @@ def validate_key_and_start():
         error_msg = 'הקוד לא נכון, אנא וודא שהכנסת נכון את הקוד'
     if error_msg:
         return render_template('home.html', error_msg=error_msg)
-    return redirect(url_for('start.index'))
+    return redirect(url_for('start.index', key=given_key))
 
 
 def is_mobile_device(user_agent):
